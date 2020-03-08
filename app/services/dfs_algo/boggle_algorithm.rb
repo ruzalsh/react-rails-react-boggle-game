@@ -1,6 +1,7 @@
-class BogglesInteractor
+class BogglesAlgorithm < ApplicationService
     # include Interactor 
-
+    require 'matrix'
+    
     def initialize(boggle)
        @word = boggle.word
        @alphabets_on_boggle = boggle.alphabets_on_boggle 
@@ -9,6 +10,12 @@ class BogglesInteractor
        @row_size = matrix_size_constant[0].to_i
        @column_size = matrix_size_constant[1].to_i
        @total = @row_size * @column_size
+    end
+
+    def call
+        word_in_matrix = get_words_in_matrix_form
+        instance_of_boggle_search_test = BoggleSearchTest.new(word_in_matrix)
+        instance_of_boggle_search_test.call
     end
 
     def checkWord()
@@ -20,7 +27,7 @@ class BogglesInteractor
 
     end
 
-    def generate_Matrix_from_string()
+    def get_words_in_matrix_form
         characters = @alphabets_on_boggle.split("")
         rows=[]
         i = 0
@@ -40,6 +47,6 @@ class BogglesInteractor
                 break
             end
         end
-        return rows
+        return Matrix[*rows]
     end
 end
