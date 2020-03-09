@@ -1,4 +1,4 @@
-class BogglesController < ApplicationController
+class BogglesController < ActionController::API
 
     def get_possible_words_from_string
         @boggle = Boggle.new(boggle_params)
