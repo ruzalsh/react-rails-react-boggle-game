@@ -23,10 +23,12 @@ class BogglesController < ActionController::API
         boggle = Boggle.new(boggle_params)
         bogglesService = BogglesService.new(boggle)
         
-        if bogglesService.is_valid_with_algo
+        result = bogglesService.is_valid_with_algo
+        if result["isValid"]
             score = Score.new()
             score.score =boggle.word.length
-            render json: {status: 'SUCCESS',message: 'valid word', data: score} and return  
+            result["score"] = score
+            render json: {status: 'SUCCESS',message: 'valid word', data: result} and return  
         end
         render json: {status: 'FAILED',message: 'invalid word', data: ""}
     end

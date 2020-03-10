@@ -52,12 +52,12 @@ class BoggleSearchTest
         #     t.join
         # }
         
-        puts @possibleWords.size()
-        print @possibleWords
+        
         
         ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
         elapsed = ending - starting
         puts elapsed
+        return @possibleWords
     end
 
     # private

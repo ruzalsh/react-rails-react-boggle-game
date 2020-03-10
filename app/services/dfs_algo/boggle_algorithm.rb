@@ -1,4 +1,4 @@
-class BogglesAlgorithm < ApplicationService
+class BoggleAlgorithm < ApplicationService
     # include Interactor 
     require 'matrix'
     
@@ -15,7 +15,7 @@ class BogglesAlgorithm < ApplicationService
     def call
         word_in_matrix = get_words_in_matrix_form
         instance_of_boggle_search_test = BoggleSearchTest.new(word_in_matrix)
-        instance_of_boggle_search_test.call
+        return instance_of_boggle_search_test.call
     end
 
     def checkWord()
