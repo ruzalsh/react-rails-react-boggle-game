@@ -66,7 +66,7 @@ class Boggle extends React.Component {
                             <h5>Word: {this.state.value}</h5>
                             <p id="current-word"></p>
                         </div>
-                        <button id="submit-btn" onClick={this.props.boggleAction}>Submit Word</button>
+                        <button id="submit-btn" onClick={()=>{this.props.boggleAction(data)}}>Submit Word</button>
                     </section>
                     <table id="score-table">
                         <tbody>

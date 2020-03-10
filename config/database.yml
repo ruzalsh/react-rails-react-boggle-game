@@ -10,13 +10,12 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: password
-  host: localhost
-  database: world
+  username: ybhwjkfkgberjp
+  password: eb0027dc8b297b174162403d9027f87b3f3b561dfe2934e441c05bba3d7cc465
+  host: ec2-23-21-197-231.compute-1.amazonaws.com
+  database: d7pgg7o28qfi8a
 
 development:
   <<: *default

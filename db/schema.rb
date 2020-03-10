@@ -12,13 +12,58 @@
 
 ActiveRecord::Schema.define(version: 2020_03_07_075317) do
 
-  create_table "boggles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "appointment", id: :bigint, default: nil, force: :cascade do |t|
+    t.string "address", limit: 255
+    t.string "contact", limit: 255
+    t.string "date", limit: 255, null: false
+    t.string "department", limit: 255, null: false
+    t.string "details", limit: 255
+    t.string "doctor", limit: 255, null: false
+    t.string "document", limit: 255
+    t.string "email", limit: 255
+    t.string "name", limit: 255
+    t.datetime "now"
+    t.bigint "patient_id", null: false
+    t.string "sex", limit: 255
+    t.string "status", limit: 255
+    t.bigint "time", null: false
+    t.bigint "timemm", null: false
+  end
+
+  create_table "boggles", force: :cascade do |t|
     t.string "word"
     t.string "alphabets_on_boggle"
     t.string "matrix_size"
   end
 
-  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "doctor", primary_key: "did", id: :bigint, default: nil, force: :cascade do |t|
+    t.string "dname", limit: 255
+    t.string "dpass", limit: 255, null: false
+    t.string "dphone", limit: 255
+    t.string "dtype", limit: 255
+    t.string "pp", limit: 255
+  end
+
+  create_table "document", id: :bigint, default: nil, force: :cascade do |t|
+    t.string "docuemnt", limit: 255
+  end
+
+  create_table "patient", id: :bigint, default: nil, force: :cascade do |t|
+    t.string "address", limit: 255
+    t.string "contact", limit: 255
+    t.string "date", limit: 255
+    t.string "email", limit: 255
+    t.string "name", limit: 255
+    t.string "password", limit: 255
+    t.string "pp", limit: 255
+    t.string "sex", limit: 255
+    t.string "token", limit: 255
+  end
+
+  create_table "scores", force: :cascade do |t|
     t.integer "score"
   end
 
