@@ -69,7 +69,8 @@ Basically, The player searches for words that can be constructed from the letter
 ## Limitations
 Currently this application consists of two api and are **described with limitation** as follows
 
-1.  **POST** "/check"  
+1.  **HTTP Verb : POST** <br/>
+    **api : "localhost:3000/check"**  
     **Payload :**  <br/>
 ```bash
 {
@@ -90,7 +91,8 @@ This Api Handles simple validation, if input word exist in dictionary file it re
   }
   ```
 
-2. **POST** "/checkAlgo"  (This api process good upto 3x3 boggle game. However it is much more slower in case of 4x4 and 5x5 boggle game tested with 4GB RAM) <br/>
+2. **HTTP Verb : POST** <br/>
+    **api : "localhost:3000/checkAlgo"**  (This api process good upto 3x3 boggle game. However it is much more slower in case of 4x4 and 5x5 boggle game tested with 4GB RAM) <br/>
     **Payload :** 
 ```bash
 {
