@@ -37,7 +37,7 @@ $ gem install bundler
 
 **Step 2:** Install all the related package.
 
-Open of a terminal window in the root of the project **/boggle-rails-react** and type :
+Open of a terminal window in the root of the project **/react-rails-react-boggle-game** and type :
 
 ```bash
 $ bundle install
@@ -70,7 +70,7 @@ Basically, The player searches for words that can be constructed from the letter
 Currently this application consists of two api and are **described with limitation** as follows
 
 1.  **POST** "/check"  
-    **Payload** 
+    **Payload**  <br/>
 ```bash
 {
 	"word":"apple",
@@ -90,7 +90,7 @@ This Api Handles simple validation, if input word exist in dictionary file it re
   }
   ```
 
-2. **POST** "/checkAlgo"  (This api process fast upto 3x3 boggle game however is much more slower in case of 4x4 and 5x5 boggle game tested with 4GB RAM)
+2. **POST** "/checkAlgo"  (This api process fast upto 3x3 boggle game however is much more slower in case of 4x4 and 5x5 boggle game tested with 4GB RAM) <br/>
     **Payload** 
 ```bash
 {
@@ -100,7 +100,7 @@ This Api Handles simple validation, if input word exist in dictionary file it re
 }
 ```
 
-Handles validation using DEPTH FIRST SEARCH algorithm,
+Handles validation using **DEPTH FIRST SEARCH algorithm**,
    if input word is valid among possible words that are scaned by ALGORITHM then it returns response as:
    ```bash
      {
@@ -118,7 +118,7 @@ Handles validation using DEPTH FIRST SEARCH algorithm,
    }
 ```
 
-3. This third API is on process of development and its main target is to provides **alphabets that are pre-processedand arranged on boggle** and **all possible meaningful words**  so that all validation of user input can be done faster from JavaScript. 
+3. This third API is on process of development and its main target is to provides **alphabets that are pre-processed and arranged on boggle** and **all possible meaningful words**  so that all validation of user input can be done faster from JavaScript. 
 
 ## Credits and References
 
