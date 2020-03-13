@@ -198,7 +198,7 @@ class Boggle extends React.Component {
                             <span className="countdown">
                                 <CountdownCircleTimer
                                     isPlaying
-                                    durationSeconds={10}
+                                    durationSeconds={180}
                                     colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
                                     renderTime={renderTime}
                                     onComplete={() => { this.handleTimeUp() }}
