@@ -41,7 +41,7 @@ class BogglesController < ActionController::API
 
     def getPossibleWords
         boggle = Boggle.new(boggle_params)
-        render json: {status: 'SUCCESS',message: 'valid word', data: BogglesService.new(boggle).getPossibleWords}
+        render json: {status: 'SUCCESS',message: 'valid word', data: BogglesService.new(boggle).getPossibleWords.uniq}
     end
 
     private

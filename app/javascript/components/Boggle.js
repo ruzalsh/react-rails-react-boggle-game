@@ -35,9 +35,9 @@ class Boggle extends React.Component {
     }
 
     componentDidMount() {
-        this.randomizer();
+        let dice = this.randomizer();
         this.props.getPossibleWords({
-            "alphabets_on_boggle": "abcdefghi",
+            "alphabets_on_boggle": dice.toString().toLowerCase(),
             "matrix_size": "3x3"
         }).then(res => {
             if (res) {
@@ -56,13 +56,14 @@ class Boggle extends React.Component {
     randomizer = () => {
         let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let dice = this.state.dice;
-        for (let i = 0; i < 16; i++) {
+        for (let i = 0; i < 9; i++) {
             let result = chars[Math.floor(Math.random() * chars.length)];
             dice.push(result);
         }
         this.setState({
             dice: dice
         })
+        return dice;
     };
 
     getSelectedAlphabet = (val) => {
@@ -79,9 +80,9 @@ class Boggle extends React.Component {
 
     sendGameWords = () => {
         let apiData = {
-            "word": this.state.value,
-            "alphabets_on_boggle": this.state.dice.toString,
-            "matrix_size": "4x4"
+            "word": this.state.value.toLowerCase(),
+            "alphabets_on_boggle": this.state.dice.toString().toLowerCase(),
+            "matrix_size": "3x3"
             // "word": "bed",
             // "alphabets_on_boggle": "abcdefghi",
             // "matrix_size": "3x3"
