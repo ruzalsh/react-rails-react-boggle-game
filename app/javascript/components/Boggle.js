@@ -136,6 +136,7 @@ class Boggle extends React.Component {
             <div>
                 {this.state.timeupFlag &&
                     <div id="game">
+                        <h1>Game Over</h1>
                         <div>
                             <button onClick={this.replay}>New Game</button>
                         </div>
