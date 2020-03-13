@@ -107,9 +107,6 @@ Handles validation using **DEPTH FIRST SEARCH algorithm**,
        "status": "SUCCESS",
       "message": "valid word",
        "data": {
-           "possibleWords": [
-               "knife"
-           ],
            "isValid": true,
            "score": {
                "score": 5
