@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import boogleReducer from "./boggleReducer";
+import boogleReducer, { getPossibleWordsReducer } from "./boggleReducer";
 
 const rootReducer = combineReducers({
-    boogleData:boogleReducer
+    boogleData:boogleReducer,
+    getPossibleWordsData:getPossibleWordsReducer
 
 })
 

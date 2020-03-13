@@ -39,6 +39,11 @@ class BogglesController < ActionController::API
         render json: {status: 'FAILED',message: 'invalid word', data: ""}
     end
 
+    def getPossibleWords
+        boggle = Boggle.new(boggle_params)
+        render json: {status: 'SUCCESS',message: 'valid word', data: BogglesService.new(boggle).getPossibleWords}
+    end
+
     private
     def boggle_params
         params.require(:boggle).permit(:word, :alphabets_on_boggle, :matrix_size)

@@ -21,8 +21,8 @@
 }
 #game #dice-grid {
   border: 5px solid #FFCA08;
-  width: 280px;
-  height: 275px;
+  width: 223px;
+  height: 223px;
   margin: 0 auto;
   background-color: #398bd4;
 }
@@ -80,4 +80,12 @@
 }
 #game #score-table tr:last-child tr, #game #score-table tr:last-child td {
   border-bottom: none;
+}
+
+.countdown {
+  padding: 30px 200px;
+}
+
+#right{
+  margin-right: auto;
 }

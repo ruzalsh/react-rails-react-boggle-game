@@ -23,8 +23,8 @@ class BogglesService < ApplicationService
     # and validating each words in dictionary while will provide all possible words 
     def is_valid_with_algo
         keyValue = Hash.new
-        possibleWords = BoggleAlgorithm.call(@boggle)
-        keyValue["possibleWords"] = possibleWords
+        # possibleWords = BoggleAlgorithm.call(@boggle)
+        # keyValue["possibleWords"] = possibleWords
         if possibleWords.include? @word
             keyValue["isValid"] = true
         else
@@ -34,7 +34,10 @@ class BogglesService < ApplicationService
     end
 
     def get_boggle
-        puts "aaa"
         WordProcesser.new().call
+    end
+
+    def getPossibleWords
+        return BoggleAlgorithm.call(@boggle)
     end
 end

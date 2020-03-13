@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   # this is on process its main target is to provide alphabets that are pre-processed
   # and arranged on boggle so that validation of user input can be done faster and also for effeciency
   get "getBoggle" => "boggles#get_boggle"
+
+  post "getPossibleWords" => "boggles#getPossibleWords"
 end

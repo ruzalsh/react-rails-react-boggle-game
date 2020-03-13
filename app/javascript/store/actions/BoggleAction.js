@@ -4,13 +4,14 @@ export const boggle = {
     action: 'BOGGLE_ACTION',
     success: 'BOGGLE_ACTION_SUCCESS',
     failure: 'BOGGLE_ACTION_FAILURE',
+    getWords: 'BOGGLE_WORDS'
 }
 
 export function boggleAction(data) {
     return {type: boggle.action, payload: data};
 }
 
-export function boggleActionResponseError(data) {
+export function boggleActionResponse(data) {
     return {type: boggle.success, payload: data}
 }
 
@@ -18,21 +19,43 @@ export function boggleActionError(data) {
     return {type: boggle.failure, payload: data}
 }
 
+export function boglePossibleWords(data) {
+    return {type: boggle.getWords, payload: data}
+}
+
+export function bogglePossibleWordsError(data) {
+    return {type: boggle.getWords, payload: data}
+}
+
 export const validate = (payload) => {
-    console.log(payload)
     return (dispatch) => {
         dispatch(boggleAction)
-        axios.post("/check", {
-            word: 'foo',
-            alphabets_on_boggle: 'bar',
-            matrix_size: 1
-        })
-            .then(response => {
-                dispatch(boggleActionResponseError(response.data))
+        return axios({
+            method: 'post',
+            url: "/check",
+            data: payload
+          }).then(response => {
+                return dispatch(boggleActionResponse(response.data))
             })
             .catch(error => {
                 const errorMsg = error.message
-                dispatch(boggleActionError(errorMsg));
+                return dispatch(boggleActionError(errorMsg));
             })
+    }
+}
+
+export const getPossibleWords = (payload) => {
+    return (dispatch) => {
+        return axios({
+            method : 'post',
+            url: "/getPossibleWords",
+            data:payload
+        }).then(response => {
+            return dispatch(boglePossibleWords(response.data))
+        })
+        .catch(error => {
+            const errorMsg = error.message
+            return dispatch(bogglePossibleWordsError(errorMsg));
+        })
     }
 }

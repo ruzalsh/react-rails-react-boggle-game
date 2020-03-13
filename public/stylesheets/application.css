@@ -1,84 +1,91 @@
 #game {
-    min-height: 600px;
-    width: 350px;
-    border: 1px solid #ccc;
-    margin: 0 auto;
-    background-color: #F57912;
-    padding-bottom: 20px;
-  }
-  #game section {
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #game header {
-    width: auto;
-    margin: 10px auto;
-    text-align: center;
-  }
-  #game header img {
-    max-width: 200px;
-  }
-  #game #dice-grid {
-    border: 5px solid #FFCA08;
-    width: 280px;
-    height: 275px;
-    margin: 0 auto;
-    background-color: #398bd4;
-  }
-  #game #dice-grid .dice {
-    text-align: center;
-  }
-  #game #dice-grid .dice button {
-    height: 46px;
-    width: 45px;
-    margin: 3px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: -2px 2px 2px #000;
-    outline: none;
-    border: none;
-    font-weight: 800;
-  }
-  #game #dice-grid .dice .selected {
-    background-color: #acceec;
-  }
-  #game #dice-grid .dice:first-child {
-    margin-top: 6px;
-  }
-  #game #word-info {
-    margin-top: 20px;
-  }
-  #game #word-info * {
-    display: inline;
-  }
-  #game #word-info button {
-    float: right;
-  }
-  #game #score-table {
-    width: 50%;
-    outline: 3px solid #FFCA08;
-    margin-left: 35px;
-    margin-top: 20px;
-    border-spacing: 0;
-  }
-  #game #score-table tr th {
-    text-align: left;
-  }
-  #game #score-table tr th, #game #score-table tr td {
-    padding: 2px;
-    margin: 0;
-    border-bottom: 3px solid #FFCA08;
-    background-color: #fff;
-  }
-  #game #score-table tr th:first-child, #game #score-table tr td:first-child {
-    width: 70%;
-  }
-  #game #score-table tr th:last-child, #game #score-table tr td:last-child {
-    width: 30%;
-    border-left: 3px solid #FFCA08;
-  }
-  #game #score-table tr:last-child tr, #game #score-table tr:last-child td {
-    border-bottom: none;
-  }
-  
+  min-height: 600px;
+  width: 350px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  background-color: #F57912;
+  padding-bottom: 20px;
+}
+#game section {
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#game header {
+  width: auto;
+  margin: 10px auto;
+  text-align: center;
+}
+#game header img {
+  max-width: 200px;
+}
+#game #dice-grid {
+  border: 5px solid #FFCA08;
+  width: 223px;
+  height: 223px;
+  margin: 0 auto;
+  background-color: #398bd4;
+}
+#game #dice-grid .dice {
+  text-align: center;
+}
+#game #dice-grid .dice button {
+  height: 46px;
+  width: 45px;
+  margin: 3px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: -2px 2px 2px #000;
+  outline: none;
+  border: none;
+  font-weight: 800;
+}
+#game #dice-grid .dice .selected {
+  background-color: #acceec;
+}
+#game #dice-grid .dice:first-child {
+  margin-top: 6px;
+}
+#game #word-info {
+  margin-top: 20px;
+}
+#game #word-info * {
+  display: inline;
+}
+#game #word-info button {
+  float: right;
+}
+#game #score-table {
+  width: 50%;
+  outline: 3px solid #FFCA08;
+  margin-left: 35px;
+  margin-top: 20px;
+  border-spacing: 0;
+}
+#game #score-table tr th {
+  text-align: left;
+}
+#game #score-table tr th, #game #score-table tr td {
+  padding: 2px;
+  margin: 0;
+  border-bottom: 3px solid #FFCA08;
+  background-color: #fff;
+}
+#game #score-table tr th:first-child, #game #score-table tr td:first-child {
+  width: 70%;
+}
+#game #score-table tr th:last-child, #game #score-table tr td:last-child {
+  width: 30%;
+  border-left: 3px solid #FFCA08;
+}
+#game #score-table tr:last-child tr, #game #score-table tr:last-child td {
+  border-bottom: none;
+}
+
+.countdown {
+  padding: 30px 200px;
+}
+
+#right{
+  margin-right: auto;
+}
