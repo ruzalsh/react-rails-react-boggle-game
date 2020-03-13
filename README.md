@@ -5,8 +5,6 @@ This is a [Ruby on Rails](https://rubyonrails.org/) and [React.js](https://react
 
 
 
-[Check out the demo on Heroku](https://stormy-temple-09691.herokuapp.com/)
-
 
 
 ## Built with
