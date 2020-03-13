@@ -38,7 +38,7 @@ class Boggle extends React.Component {
         let dice = this.randomizer();
         this.props.getPossibleWords({
             "alphabets_on_boggle": dice.toString().toLowerCase(),
-            "matrix_size": "3x3"
+            "matrix_size": "4x4"
         }).then(res => {
             if (res) {
                 if (res.payload) {
@@ -82,10 +82,10 @@ class Boggle extends React.Component {
         let apiData = {
             "word": this.state.value.toLowerCase(),
             "alphabets_on_boggle": this.state.dice.toString().toLowerCase(),
-            "matrix_size": "3x3"
+            "matrix_size": "4x4"
             // "word": "bed",
             // "alphabets_on_boggle": "abcdefghi",
-            // "matrix_size": "3x3"
+            // "matrix_size": "4x4"
         }
         this.props.boggleAction(apiData).then(res => {
             console.log("res", res)
